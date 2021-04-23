@@ -44,6 +44,7 @@ public:
     void imprime();
     void atualizaLimites();
     void obtemLimites(Ponto &Min, Ponto &Max);
+    void insereVertice(int index, Ponto p);
 };
 
 #endif 

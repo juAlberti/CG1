@@ -28,10 +28,16 @@ void Poligono::insereVertice(Ponto p, int pos)
     Vertices.insert(Vertices.begin()+pos, p);
 }
 
+void Poligono::insereVertice(int index, Ponto p)
+{
+    Vertices.insert(Vertices.begin() + index, p);
+}
+
 Ponto Poligono::getVertice(int i)
 {
     return Vertices[i];
 }
+
 void Poligono::desenhaPoligono()
 {
     glBegin(GL_LINE_LOOP);
@@ -39,6 +45,7 @@ void Poligono::desenhaPoligono()
         glVertex3f(Vertices[i].x,Vertices[i].y,Vertices[i].z);
     glEnd();
 }
+
 void Poligono::desenhaVertices()
 {
     glBegin(GL_POINTS);
@@ -46,11 +53,13 @@ void Poligono::desenhaVertices()
         glVertex3f(Vertices[i].x,Vertices[i].y,Vertices[i].z);
     glEnd();
 }
+
 void Poligono::imprime()
 {
     for (int i=0; i<Vertices.size(); i++)
         Vertices[i].imprime();
 }
+
 unsigned long Poligono::getNVertices()
 {
     return Vertices.size();
